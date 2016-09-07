@@ -1,9 +1,8 @@
-{% include JB/is_production %}
-{% if is_production and site.JB.sharing.provider and page.JB.sharing != false %}
+{% if site.JB.sharing.provider %}
 
 {% case site.JB.sharing.provider %}
-{% when "custom" %}
-  {% include custom/sharing %}
+{% when "facebook" %}
+  {% include JB/sharing-providers/facebook %}
 {% endcase %}
 
 {% endif %}
